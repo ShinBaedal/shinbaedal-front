@@ -3,13 +3,14 @@ import { Global } from "@emotion/react";
 import { reset } from "./style/globalStyle";
 // import RootRouter from "./route";
 // import CustomerOrderCheck from "./components/CustomerOrderCheck/CustomerOrderCheck";
-import CustomerDetailReview from "./components/CustomerDetailReview/CustomerDetailReview";
+import DetailReviewStar from "./components/DetailReviewStar/DetailReviewStar";
+
 function App() {
   return (
     <>
       <Global styles={reset} />
       {/* <RootRouter /> */}
-      <CustomerDetailReview />
+      <DetailReviewStar />
     </>
   );
 }
