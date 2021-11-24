@@ -14,5 +14,5 @@ export const Nav = styled.div<{ width: number; active: boolean }>`
   align-items: center;
   color: ${(props) => (props.active ? color.white : color.grey)};
   background-color: ${(props) => (props.active ? color.green : color.white)};
-  border-bottom: ${(props) => (props.active ? 1 : 0)}px solid ${color.grey};
+  border-bottom: ${(props) => (props.active ? 0 : 1)}px solid ${color.grey};
 `;
