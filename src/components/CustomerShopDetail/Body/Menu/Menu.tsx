@@ -1,6 +1,10 @@
 import * as S from "./styles";
 
-const Menu = (): JSX.Element => {
+interface PropsType {
+  navs: string[];
+}
+
+const Menu = ({ navs }: PropsType): JSX.Element => {
   return <div></div>;
 };
 
