@@ -11,7 +11,7 @@ const Menu = ({ navs, navState }: PropsType): JSX.Element => {
 
   const renderNavs = navs.map((value) => {
     return (
-      <S.Nav width={1 / navs.length} active={nav === value}>
+      <S.Nav width={100 / navs.length} active={nav === value}>
         {value}
       </S.Nav>
     );
