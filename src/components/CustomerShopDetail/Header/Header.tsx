@@ -5,7 +5,7 @@ import Star from "../../../assets/icons/star.svg";
 import Like from "../../../assets/icons/like.svg";
 import Dislike from "../../../assets/icons/dislike.svg";
 
-const CustomerShopDetailHeader = (): JSX.Element => {
+const Header = (): JSX.Element => {
   return (
     <S.Container>
       <PictureSlider
@@ -39,4 +39,4 @@ const CustomerShopDetailHeader = (): JSX.Element => {
   );
 };
 
-export default CustomerShopDetailHeader;
+export default Header;

@@ -1,7 +1,7 @@
-import CustomerShopDetailHeader from "./CustomerShopDetailHeader/CustomerShopDetailHeader";
+import Header from "./Header/Header";
 
 const CustomerShopDetail = () => {
-  return <CustomerShopDetailHeader />;
+  return <Header />;
 };
 
 export default CustomerShopDetail;
