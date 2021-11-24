@@ -6,8 +6,18 @@ interface PropsType {
   navState: State<string>;
 }
 
-const Menu = ({ navs }: PropsType): JSX.Element => {
-  return <div></div>;
+const Menu = ({ navs, navState }: PropsType): JSX.Element => {
+  const [nav, setNav] = navState;
+
+  const renderNavs = navs.map((value) => {
+    return (
+      <S.Nav width={1 / navs.length} active={nav === value}>
+        {value}
+      </S.Nav>
+    );
+  });
+
+  return <S.Container>{renderNavs}</S.Container>;
 };
 
 export default Menu;
