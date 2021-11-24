@@ -12,7 +12,13 @@ export const MainDiv = styled.div`
   background-color: ${color.grey};
 `;
 
+export const ReviewGo = styled.p`
+  padding-top: 20px;
+  padding-left: 20px;
+  font: ${font.headline2};
 
+
+`
 
 
 
