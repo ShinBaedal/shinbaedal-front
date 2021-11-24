@@ -1,4 +1,4 @@
-import CustomerShopDetail from "../../components/CustomerShopDetail/Header/Header";
+import CustomerShopDetail from "../../components/CustomerShopDetail/CustomerShopDetail";
 import Header from "../../components/Header/Header";
 
 const CustomerShopDetailContainer = () => {
