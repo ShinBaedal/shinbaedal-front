@@ -9,9 +9,13 @@ interface PropsType {
 const Menu = ({ navs, navState }: PropsType): JSX.Element => {
   const [nav, setNav] = navState;
 
+  const onNavClick = (value: string) => {
+    setNav(value);
+  };
+
   const renderNavs = navs.map((value) => {
     return (
-      <S.Nav width={100 / navs.length} active={nav === value}>
+      <S.Nav width={100 / navs.length} active={nav === value} onClick={() => onNavClick(value)}>
         {value}
       </S.Nav>
     );
