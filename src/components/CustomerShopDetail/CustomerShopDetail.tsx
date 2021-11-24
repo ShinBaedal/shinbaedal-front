@@ -1,4 +1,4 @@
-import CustomerShopDetailHeader from "./CustomerShopDetailHeader";
+import CustomerShopDetailHeader from "./CustomerShopDetailHeader/CustomerShopDetailHeader";
 
 const CustomerShopDetail = () => {
   return <CustomerShopDetailHeader />;
