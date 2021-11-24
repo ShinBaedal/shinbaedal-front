@@ -1,8 +1,15 @@
 import React from "react";
-import "./App.css";
+import { Global } from "@emotion/react";
+import { reset } from "./style/globalStyle";
+import RootRouter from "./route";
 
 function App() {
-  return <div className="App">gkffhd</div>;
+  return (
+    <>
+      <Global styles={reset} />
+      <RootRouter />
+    </>
+  );
 }
 
 export default App;
