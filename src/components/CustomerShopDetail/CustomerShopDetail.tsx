@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Menu from "./Body/Menu/Menu";
+import SellMenuList from "./Body/SellMenuList/SellMenuList";
 import Header from "./Header/Header";
 import * as S from "./styles";
 
@@ -10,7 +11,10 @@ const CustomerShopDetail = () => {
   return (
     <S.Container>
       <Header />
-      <Menu navs={navs} navState={[nav, setNav]} />
+      <div>
+        <Menu navs={navs} navState={[nav, setNav]} />
+        <SellMenuList />
+      </div>
     </S.Container>
   );
 };
