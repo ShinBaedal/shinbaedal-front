@@ -19,7 +19,7 @@ const SellMenu = ({ data, isModalState, menusState, modalState }: PropsType) => 
     <S.Container
       onClick={() => {
         setIsModal(true);
-        setModal(<MenuModal data={data} menusState={menusState} modalState={isModalState} />);
+        setModal(<MenuModal data={data} menusState={menusState} isModalState={isModalState} />);
       }}
     >
       <S.Img src={photoUrl} alt="img" />

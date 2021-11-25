@@ -6,12 +6,12 @@ import State from "../../interface/State";
 interface PropsType {
   data: Menu;
   menusState: State<number[]>;
-  modalState: State<boolean>;
+  isModalState: State<boolean>;
 }
 
-const MenuModal = ({ data, modalState, menusState }: PropsType): JSX.Element => {
+const MenuModal = ({ data, isModalState: modalState, menusState }: PropsType): JSX.Element => {
   const { id, name, photoUrl, price } = data;
-  const [modal, setModal] = modalState;
+  const [isModal, setIsModal] = modalState;
   const [menus, setMenus] = menusState;
 
   return (
@@ -28,14 +28,15 @@ const MenuModal = ({ data, modalState, menusState }: PropsType): JSX.Element => 
         <S.BuyButton
           onClick={() => {
             setMenus(menus.concat(id));
+            setIsModal(false);
           }}
         >
           {" "}
-          구매
+          담기
         </S.BuyButton>
         <S.CancelButton
           onClick={() => {
-            setModal(false);
+            setIsModal(false);
           }}
         >
           취소

@@ -7,10 +7,11 @@ import { getMenuList } from "../../../utils/api/Menu";
 
 interface PropsType {
   data: Store;
+  id: number;
 }
 
-const Header = ({ data }: PropsType): JSX.Element => {
-  const { name, id, photoUrl, rate } = data;
+const Header = ({ data, id }: PropsType): JSX.Element => {
+  const { name, photoUrl, rate } = data;
 
   const [photo, setPhoto] = useState<string[]>([]);
 

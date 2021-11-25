@@ -49,7 +49,7 @@ const CustomerShopDetail = ({ data, menusState, id }: PropsType) => {
   return (
     <>
       <S.Container>
-        <Header data={data} />
+        <Header id={id} data={data} />
         <div>
           <Menu navs={navs} navState={[nav, setNav]} />
           {renderBody()}
