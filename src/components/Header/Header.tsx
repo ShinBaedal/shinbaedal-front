@@ -16,10 +16,6 @@ const Header = (): JSX.Element => {
     setTitle(document.title);
   }, [document.title]);
 
-  useLayoutEffect(() => {
-    document.title = "롯데리아 신성점";
-  }, []);
-
   return (
     <>
       <S.Container>

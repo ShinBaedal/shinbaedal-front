@@ -11,9 +11,9 @@ export const postReview = async (id: number, data: ReviewRequest) => {
   }
 };
 
-export const getReviewList = async (id: number) => {
+export const getReviewList = async (id: number, type: string) => {
   try {
-    return await instance.get<ReviewListResponse>(`${uri.reviewList}/${id}`);
+    return await instance.get<ReviewListResponse>(`${uri.reviewList}/${id}?type=${type}`);
   } catch (error) {
     return Promise.reject(error);
   }

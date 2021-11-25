@@ -1,13 +1,19 @@
 import * as S from "./styles";
-import Img from "../../../assets/pictures/hamburger.jpg";
+import Menu from "../../../interface/Menu";
 
-const SellMenu = () => {
+interface PropsType {
+  data: Menu;
+}
+
+const SellMenu = ({ data }: PropsType) => {
+  const { id, name, photoUrl, price } = data;
+
   return (
     <S.Container>
-      <S.Img src={Img} alt="img" />
+      <S.Img src={photoUrl} alt="img" />
       <S.InfoContainer>
-        <S.Body2>햄버거 많이 많이 세트</S.Body2>
-        <S.Won>10,000원</S.Won>
+        <S.Body2>{name}</S.Body2>
+        <S.Won>{price.toLocaleString("ko-KR")}원</S.Won>
       </S.InfoContainer>
       <S.Line />
     </S.Container>

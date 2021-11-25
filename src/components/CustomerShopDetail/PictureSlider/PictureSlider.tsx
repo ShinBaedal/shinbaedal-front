@@ -13,7 +13,7 @@ const PictureSlider = ({ pictures }: PropsType): JSX.Element => {
   };
 
   const renderPictures = pictures.map((value, index) => {
-    return <S.Img onClick={() => onImgClick(index)} src={value} alt="img" />;
+    return <S.Img onClick={() => onImgClick(index)} src={value} key={index} alt="img" />;
   });
 
   const renderDots = pictures.map((_, i) => {

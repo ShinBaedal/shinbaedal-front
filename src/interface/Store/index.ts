@@ -1,8 +1,8 @@
 export default interface Store {
   id: number;
-  name: String;
-  category: String;
-  photoUrl: String;
-  tell: String;
+  name: string;
+  category: string;
+  photoUrl: string;
+  tell: string;
   rate: number;
 }

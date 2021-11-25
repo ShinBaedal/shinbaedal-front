@@ -12,7 +12,7 @@ const MainRouter: FC = (): JSX.Element => {
   return (
     <Suspense fallback={<div>로딩중...</div>}>
       <Routes>
-        <Route path=":access_token" element={<MainContainer />} />
+        <Route path="shop/:access_token/:id" element={<MainContainer />} />
         <Route path="customer">
           <Route path="shop">
             <Route path=":id" element={<CustomerShopDetailContainer />} />

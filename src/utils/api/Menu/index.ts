@@ -2,11 +2,10 @@ import uri from "../../../constance/uri";
 import MenuListResponse from "../../../models/dto/response/menuListResponse";
 import instance from "../axios";
 
-export const getMenuList = async (id: string) => {
+export const getMenuList = async (id: number) => {
   try {
     return await instance.get<MenuListResponse>(`${uri.menuList}/${id}`);
   } catch (error) {
     return Promise.reject(error);
   }
 };
-

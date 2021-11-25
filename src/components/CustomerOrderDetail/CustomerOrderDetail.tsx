@@ -9,7 +9,8 @@ export default function CustomerorderDetail() {
       <S.Container>
         <TopMenus />
         {[1, 2, 3, 4].map((a, i) => (
-          <SellMenu />
+          // <SellMenu id={0} />
+          <div></div>
         ))}
         <Total />
       </S.Container>
