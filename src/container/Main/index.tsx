@@ -1,15 +1,14 @@
-// import Header from "../../components/Header/Header";
-// import Main from "../../components/Main/Main";
-import CustomerOrderDetail from "../../components/CustomerOrderDetail/CustomerOrderDetail";
+import { useLayoutEffect } from "react";
+import { useParams } from "react-router";
+import { setToken } from "../../constance";
 
 const MainContainer = (): JSX.Element => {
-  return (
-    <>
-      {/* <Header />
-      <Main /> */}
-      <CustomerOrderDetail />
-    </>
-  );
+  const { access_token } = useParams();
+
+  useLayoutEffect(() => {
+    if (access_token) setToken(access_token);
+  }, [access_token]);
+  return <></>;
 };
 
 export default MainContainer;
