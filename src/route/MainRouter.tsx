@@ -1,5 +1,6 @@
 import React, { FC, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+import CustomerOrderList from "../components/CustomerOrderList/CustomerOrderList";
 import {
   MainContainer,
   CustomerShopDetailContainer,
@@ -13,6 +14,7 @@ const MainRouter: FC = (): JSX.Element => {
         <Route path="/" element={<MainContainer />} />
         <Route path="/customer/shop/detail" element={<CustomerShopDetailContainer />} />
         <Route path="/customer/ordercheck" element={<CustomerOrderCheckContainer />} />
+        <Route path="/customer/orderlist" element={<CustomerOrderList />} />
       </Routes>
     </Suspense>
     //https://naver.com/route
