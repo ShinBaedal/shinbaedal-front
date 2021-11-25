@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useLayoutEffect, useState } from "react";
 import Star from "../../assets/icons/star.svg";
 import DisableStar from "../../assets/icons/disable_star.svg";
@@ -19,7 +20,11 @@ export default function DetailReviewStar() {
             return <S.Star src={Star} />;
           })}
         </S.StarContainer>
-        <S.ReviewInput placeholder="리뷰 입력 ..." onChange={onChange} value={content} />
+        <S.ReviewInput
+          placeholder="리뷰 입력 ..."
+          onChange={onChange}
+          value={content}
+        />
 
         <S.WriteBtn>리뷰 작성</S.WriteBtn>
       </S.Container>

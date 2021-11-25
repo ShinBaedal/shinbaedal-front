@@ -2,7 +2,7 @@ import { useLayoutEffect, useState } from "react";
 import * as S from "./styles";
 import back from "../../assets/icons/back.svg";
 import logout from "../../assets/icons/Logout.svg";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const Header = (): JSX.Element => {
   const navigate = useNavigate();
