@@ -10,6 +10,7 @@ const MainRouter: FC = (): JSX.Element => {
         <Route path="/customer/shop/detail" element={<CustomerShopDetailContainer />} />
       </Routes>
     </Suspense>
+    //https://naver.com/route
   );
 };
 

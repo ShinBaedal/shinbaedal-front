@@ -1,29 +1,29 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import "./temp.css";
-import { MainDiv } from "./styles";
+import Star from "../../assets/icons/star.svg";
+import DisableStar from "../../assets/icons/disable_star.svg";
 import * as S from "./styles";
-import Rating from "@mui/material/Rating";
-// import { font } from "../../style/font";
 
 export default function DetailReviewStar() {
+  const [content, setContent] = useState<string>("");
+
+  const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setContent(e.target.value);
+  };
+
   return (
     <>
-      <MainDiv>
+      <S.MainDiv>
         <S.ReviewGo>리뷰 달기</S.ReviewGo>
-        <Rating
-          style={{
-            color: "#05D686",
-            paddingLeft: "20px",
-            paddingTop: "20px",
-            marginBottom: "20px",
-          }}
-          name="size-large"
-          defaultValue={5}
-        />
-        <S.ReviewInput placeholder="리뷰 입력 ..."></S.ReviewInput>
+        <S.StarContainer>
+          {[1, 2, 3, 4, 5].map((value) => {
+            return <S.Star src={Star} />;
+          })}
+        </S.StarContainer>
+        <S.ReviewInput placeholder="리뷰 입력 ..." onChange={onChange} value={content} />
+
         <S.WriteBtn>리뷰 작성</S.WriteBtn>
-      </MainDiv>
-      <S.Fill></S.Fill>
+      </S.MainDiv>
     </>
   );
 }
