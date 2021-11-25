@@ -16,6 +16,7 @@ export const InnerContainer = styled.div`
 export const Img = styled.img`
   width: 100%;
   height: 327px;
+  border-radius: 20px;
   object-fit: cover;
   object-position: center;
 `;

@@ -19,6 +19,9 @@ const Modal = ({ children, activeState }: PropsType) => {
   useLayoutEffect(() => {
     document.body.style.overflow = active ? "hidden" : "unset";
     window.scrollTo(0, 0);
+    setisTouch(false);
+    isFullRef.current = false;
+    if (containerRef.current) containerRef.current.style.height = `unset`;
 
     return () => {
       document.body.style.overflow = "unset";
@@ -28,7 +31,7 @@ const Modal = ({ children, activeState }: PropsType) => {
   useLayoutEffect(() => {
     if (!firstHeightRef.current && containerRef.current)
       firstHeightRef.current = containerRef.current.clientHeight;
-  }, [containerRef]);
+  }, [containerRef.current]);
 
   useLayoutEffect(() => {
     if (containerRef.current && firstHeightRef.current && !isTouch) {
@@ -61,17 +64,21 @@ const Modal = ({ children, activeState }: PropsType) => {
 
               const y = window.screen.height - screenY;
 
-              if (containerRef.current && firstHeightRef.current) {
+              if (containerRef.current) {
                 if (screenY < window.screen.height * 0.3) {
                   setActive(true);
                   isFullRef.current = true;
+                  isCloseRef.current = false;
                 } else if (screenY < window.screen.height * 0.9) {
                   setActive(true);
                   isFullRef.current = false;
+                  isCloseRef.current = false;
                 } else {
                   isCloseRef.current = true;
                   isFullRef.current = false;
+                  setActive(false);
                 }
+                heightRef.current = y;
                 containerRef.current.style.height = `${y}px`;
               }
             }

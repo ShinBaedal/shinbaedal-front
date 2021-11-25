@@ -1,20 +1,25 @@
 import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router";
+import { useLocation, useNavigate, useParams } from "react-router";
 import { setToken } from "../../constance";
 
 const MainContainer = (): JSX.Element => {
-  const { access_token, id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const query = new URLSearchParams(location.search);
 
   useEffect(() => {
     console.log("ASd");
-
+    const access_token = query.get("access_token");
+    const id = query.get("id");
     if (access_token && id) {
       setToken(access_token);
       navigate(`/customer/shop/${id}`);
     }
+
+    console.log(access_token);
+    console.log(id);
     console.log("AS123");
-  }, [access_token, id]);
+  }, [window.location.search]);
 
   return (
     <>

@@ -33,8 +33,6 @@ const CustomerShopDetailContainer = () => {
     if (data) document.title = data.name;
   }, [data]);
 
-  const navigate = useNavigate();
-
   const onBuy = async () => {
     if (menus.length > 0) {
       const d: OrderRequest = {
@@ -52,7 +50,7 @@ const CustomerShopDetailContainer = () => {
   return (
     <>
       <Header />
-      {data && <CustomerShopDetail data={data} menusState={[menus, setMenus]} />}
+      {data && <CustomerShopDetail data={data} menusState={[menus, setMenus]} id={Number(id)} />}
       <Footer onBuy={onBuy} size={menus.length} />
     </>
   );

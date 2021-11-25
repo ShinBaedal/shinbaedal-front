@@ -12,16 +12,15 @@ import { useNavigate } from "react-router";
 interface PropsType {
   data: Store;
   menusState: State<number[]>;
+  id: number;
 }
 
-const CustomerShopDetail = ({ data, menusState }: PropsType) => {
+const CustomerShopDetail = ({ data, menusState, id }: PropsType) => {
   const navs = ["메뉴", "리뷰"];
 
   const [nav, setNav] = useState<string>(navs[0]);
-  const [isModal, setIsModal] = useState<boolean>(true);
+  const [isModal, setIsModal] = useState<boolean>(false);
   const [modal, setModal] = useState<JSX.Element | null>(null);
-
-  const { id } = data;
 
   const renderBody = () => {
     const bodyMap = new Map<string, JSX.Element>()
@@ -56,12 +55,7 @@ const CustomerShopDetail = ({ data, menusState }: PropsType) => {
           {renderBody()}
         </div>
       </S.Container>
-      <Modal activeState={[isModal, setIsModal]}>
-        {/* <MenuModal /> */}
-        {/* <ReviewModal /> */}
-        {/* <DetailReviewStar /> */}
-        {/* {modal} */}
-      </Modal>
+      <Modal activeState={[isModal, setIsModal]}>{modal}</Modal>
     </>
   );
 };

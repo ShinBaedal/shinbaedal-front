@@ -17,7 +17,7 @@ const PictureSlider = ({ pictures }: PropsType): JSX.Element => {
   });
 
   const renderDots = pictures.map((_, i) => {
-    return <S.Dot isActive={index === i} />;
+    return <S.Dot isActive={index === i} key={i} />;
   });
 
   const calcX = (): number => {
