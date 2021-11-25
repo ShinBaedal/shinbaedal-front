@@ -28,6 +28,7 @@ export const InfoContainer = styled.div`
 
 export const Body2 = styled.div`
   font: ${font.body2};
+  color: ${color.black};
 `;
 
 export const Won = styled.div`

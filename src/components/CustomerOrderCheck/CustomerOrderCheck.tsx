@@ -7,11 +7,13 @@ import OrderBtn from "./OrderBtn";
 export default function CustomerOrderCheck() {
   return (
     <>
-      <S.Selected>선택한 메뉴</S.Selected>
-      <SelectedMenu></SelectedMenu>
-      <SelectedMenu></SelectedMenu>
-      <SelectedMenu></SelectedMenu>
-      <OrderBtn></OrderBtn>
+      <S.Container>
+        <S.Selected>선택한 메뉴</S.Selected>
+        <SelectedMenu></SelectedMenu>
+        <SelectedMenu></SelectedMenu>
+        <SelectedMenu></SelectedMenu>
+        <OrderBtn></OrderBtn>
+      </S.Container>
     </>
   );
 }

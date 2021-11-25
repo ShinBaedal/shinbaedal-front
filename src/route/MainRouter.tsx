@@ -1,6 +1,10 @@
 import React, { FC, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import { MainContainer, CustomerShopDetailContainer } from "../container";
+import {
+  MainContainer,
+  CustomerShopDetailContainer,
+  CustomerOrderCheckContainer,
+} from "../container";
 
 const MainRouter: FC = (): JSX.Element => {
   return (
@@ -8,6 +12,7 @@ const MainRouter: FC = (): JSX.Element => {
       <Routes>
         <Route path="/" element={<MainContainer />} />
         <Route path="/customer/shop/detail" element={<CustomerShopDetailContainer />} />
+        <Route path="/customer/ordercheck" element={<CustomerOrderCheckContainer />} />
       </Routes>
     </Suspense>
     //https://naver.com/route

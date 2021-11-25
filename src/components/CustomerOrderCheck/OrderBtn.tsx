@@ -7,14 +7,10 @@ export default function OrderBtn() {
   return (
     <>
       <S.OrderForm>
-        <S.OrderPrice style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-          &nbsp; 30,000원
-        </S.OrderPrice>
-        <span
-          style={{ float: "right", paddingTop: "10px", paddingBottom: "10px" }}
-        >
-          총금액 :
-        </span>
+        <S.TitleContainer>
+          <span>총금액 :</span>
+          <S.OrderPrice>&nbsp; 30,000원</S.OrderPrice>
+        </S.TitleContainer>
         <S.Order>구매 하기</S.Order>
       </S.OrderForm>
     </>
