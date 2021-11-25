@@ -3,13 +3,13 @@ import { Global } from "@emotion/react";
 import { reset } from "./style/globalStyle";
 // import RootRouter from "./route";
 // import CustomerOrderCheck from "./components/CustomerOrderCheck/CustomerOrderCheck";
-import DetailReviewStar from "./components/DetailReviewStar/DetailReviewStar";
+import CustomerOrderList from "./components/CustomerOrderList/CustomerOrderList";
 
 function App() {
   return (
     <>
       <Global styles={reset} />
-      <DetailReviewStar />
+      <CustomerOrderList />
     </>
   );
 }

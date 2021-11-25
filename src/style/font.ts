@@ -4,6 +4,7 @@ export const font = {
   headline1: `bold 32px 'Spoqa Han Sans Neo', 'sans-serif'`,
   headline2: `bold 28px 'Spoqa Han Sans Neo', 'sans-serif'`,
   headline3: `$bold 24px 'Spoqa Han Sans Neo', 'sans-serif'`,
+  headline4: `${medium} 24px 'Spoqa Han Sans Neo', 'sans-serif'`,
   subtitle1: `bold 20px 'Spoqa Han Sans Neo', 'sans-serif'`,
   subtitle2: `${medium} 20px 'Spoqa Han Sans Neo', 'sans-serif'`,
   body1: `bold 16px 'Spoqa Han Sans Neo', 'sans-serif'`,
