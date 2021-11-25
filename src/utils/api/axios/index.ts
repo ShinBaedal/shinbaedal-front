@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 
-const instance = axios.create({ baseURL: `http://49.50.172.207:3000` });
+const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
+const instance = axios.create({ baseURL: `${PROXY}` });
 
 instance.interceptors.request.use(
   function (config: AxiosRequestConfig) {
