@@ -9,7 +9,7 @@ const Header = (): JSX.Element => {
   const [title, setTitle] = useState<string>("");
 
   const onBack = () => {
-    navigate(-1);
+    // Android.navigateUp();
   };
 
   useLayoutEffect(() => {
@@ -21,7 +21,7 @@ const Header = (): JSX.Element => {
       <S.Container>
         <S.Back src={back} onClick={onBack} />
         <S.Title>{title}</S.Title>
-        <S.Logout src={logout} />
+        <div></div>
       </S.Container>
     </>
   );
