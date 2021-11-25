@@ -1,18 +1,24 @@
-import React from "react";
-// import * as S from "./styles";
-import { font } from "../../style/font";
-import Review from "./Review";
-import SmBtns from "./SmBtns";
-import TopBtn from "./TopBtn";
-export default function CustomerDetailReview() {
+import React, { useState } from "react";
+import ReviewContent from "./ReviewContent/ReviewContent";
+import ReviewInput from "./ReviewInput/ReviewInput";
+import SmBtns from "./SmBtns/SmBtns";
+import * as S from "./styles";
+
+const CustomerDetailReview = () => {
+  const navs = ["긍정", "중립", "부정"];
+  const [nav, setNav] = useState<string>(navs[0]);
+
   return (
-    <>
-      <TopBtn></TopBtn>
-      <div style={{ font: `${font.headline2}`, margin: "15px" }}>리뷰 1234</div>
-      <SmBtns></SmBtns>
-      <Review></Review>
-      <Review></Review>
-      <Review></Review>
-    </>
+    <S.Container>
+      <ReviewInput />
+      <S.Title>리뷰 1234</S.Title>
+      <SmBtns navs={navs} navState={[nav, setNav]}></SmBtns>
+      <S.ReviewContainer>
+        <ReviewContent></ReviewContent>
+        <ReviewContent></ReviewContent>
+        <ReviewContent></ReviewContent>
+      </S.ReviewContainer>
+    </S.Container>
   );
-}
+};
+export default CustomerDetailReview;

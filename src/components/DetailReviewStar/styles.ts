@@ -3,13 +3,8 @@ import styled from "@emotion/styled";
 import { font } from "../../style/font";
 import { color } from "../../style/color";
 
-export const MainDiv = styled.div`
-  position: fixed;
-  bottom: 0;
+export const Container = styled.div`
   width: 100%;
-  border-radius: 20px 20px 0px 0px;
-  background-color: ${color.white};
-  padding: 24px;
 `;
 
 export const ReviewGo = styled.p`
@@ -57,6 +52,7 @@ export const WriteBtn = styled.button`
   border: 0;
   font: ${font.body1};
   color: white;
+  margin-bottom: 24px;
 `;
 
 export const Black = styled.div`

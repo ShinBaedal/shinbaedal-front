@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React, { useLayoutEffect, useState } from "react";
-import "./temp.css";
 import Star from "../../assets/icons/star.svg";
 import DisableStar from "../../assets/icons/disable_star.svg";
 import * as S from "./styles";
@@ -14,7 +13,7 @@ export default function DetailReviewStar() {
 
   return (
     <>
-      <S.MainDiv>
+      <S.Container>
         <S.ReviewGo>리뷰 달기</S.ReviewGo>
         <S.StarContainer>
           {[1, 2, 3, 4, 5].map((value) => {
@@ -28,7 +27,7 @@ export default function DetailReviewStar() {
         />
 
         <S.WriteBtn>리뷰 작성</S.WriteBtn>
-      </S.MainDiv>
+      </S.Container>
     </>
   );
 }
