@@ -25,7 +25,6 @@ const MainRouter: FC = (): JSX.Element => {
         </Route>
       </Routes>
     </Suspense>
-    //https://naver.com/route
   );
 };
 
