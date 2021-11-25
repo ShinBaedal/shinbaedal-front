@@ -7,7 +7,7 @@ import Header from "../Header/Header";
 export default function CustomerOrderList() {
   return (
     <div>
-      <Header />;
+      <Header />
       <S.MainTitle>주문 목록</S.MainTitle>
       <MainDivOk />
       <MainDivOrderWait />
