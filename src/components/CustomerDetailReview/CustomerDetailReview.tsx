@@ -1,6 +1,9 @@
 import React, { useLayoutEffect, useState } from "react";
 import Review from "../../interface/Review";
+import State from "../../interface/State";
 import { getReviewList } from "../../utils/api/Review";
+import DetailReviewStar from "../DetailReviewStar/DetailReviewStar";
+import ReviewModal from "../ReviewModal/ReviewModal";
 import ReviewContent from "./ReviewContent/ReviewContent";
 import ReviewInput from "./ReviewInput/ReviewInput";
 import SmBtns from "./SmBtns/SmBtns";
@@ -8,12 +11,16 @@ import * as S from "./styles";
 
 interface PropsType {
   id: number;
+  isModalState: State<boolean>;
+  modalState: State<JSX.Element | null>;
 }
 
-const CustomerDetailReview = ({ id }: PropsType) => {
+const CustomerDetailReview = ({ id, isModalState, modalState }: PropsType) => {
   const navs = ["긍정", "중립", "부정"];
   const [nav, setNav] = useState<string>(navs[0]);
   const [reviewList, setReviewList] = useState<Review[]>([]);
+  const [modal, setModal] = modalState;
+  const [isModal, setIsModal] = isModalState;
 
   const settingReviewList = async () => {
     try {
@@ -34,12 +41,28 @@ const CustomerDetailReview = ({ id }: PropsType) => {
   }, [id, nav]);
 
   const renderReviewList = reviewList.map((value) => {
-    return <ReviewContent data={value} />;
+    return (
+      <div
+        onClick={() => {
+          setModal(<ReviewModal data={value} />);
+          setIsModal(true);
+        }}
+      >
+        <ReviewContent data={value} />
+      </div>
+    );
   });
 
   return (
     <S.Container>
-      <ReviewInput />
+      <div
+        onClick={() => {
+          setModal(<DetailReviewStar isModalState={isModalState} />);
+          setIsModal(true);
+        }}
+      >
+        <ReviewInput />
+      </div>
       <S.Title>
         {nav} 리뷰 {reviewList.length}
       </S.Title>

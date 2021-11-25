@@ -1,20 +1,45 @@
 import * as S from "./styles";
 import Img from "../../assets/pictures/hamburger.jpg";
+import Menu from "../../interface/Menu";
+import State from "../../interface/State";
 
-const MenuModal = (): JSX.Element => {
+interface PropsType {
+  data: Menu;
+  menusState: State<number[]>;
+  modalState: State<boolean>;
+}
+
+const MenuModal = ({ data, modalState, menusState }: PropsType): JSX.Element => {
+  const { id, name, photoUrl, price } = data;
+  const [modal, setModal] = modalState;
+  const [menus, setMenus] = menusState;
+
   return (
     <S.Container>
       <S.InnerContainer>
-        <S.Img src={Img} />
+        <S.Img src={photoUrl} />
         <S.TitleContainer>
-          <S.Title>햄버거 많이 많이 세트</S.Title>
-          <S.Won>10,000원</S.Won>
+          <S.Title>{name}</S.Title>
+          <S.Won>{price.toLocaleString("ko-KR")}원</S.Won>
         </S.TitleContainer>
         <S.Content>담으시겠습니까?</S.Content>
       </S.InnerContainer>
       <S.ButtonContainer>
-        <S.BuyButton>구매</S.BuyButton>
-        <S.CancelButton>취소</S.CancelButton>
+        <S.BuyButton
+          onClick={() => {
+            setMenus(menus.concat(id));
+          }}
+        >
+          {" "}
+          구매
+        </S.BuyButton>
+        <S.CancelButton
+          onClick={() => {
+            setModal(false);
+          }}
+        >
+          취소
+        </S.CancelButton>
       </S.ButtonContainer>
     </S.Container>
   );

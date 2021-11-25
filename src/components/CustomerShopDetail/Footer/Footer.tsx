@@ -1,9 +1,14 @@
 import * as S from "./styles";
 
-const Footer = () => {
+interface PropsType {
+  onBuy: () => void;
+  size: number;
+}
+
+const Footer = ({ onBuy, size }: PropsType) => {
   return (
     <S.Container>
-      <S.Btn>주문하기</S.Btn>
+      <S.Btn onClick={onBuy}>주문하기 {size}</S.Btn>
     </S.Container>
   );
 };

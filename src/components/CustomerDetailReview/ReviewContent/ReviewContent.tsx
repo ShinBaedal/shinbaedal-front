@@ -16,13 +16,7 @@ const ReviewContent = ({ data }: PropsType) => {
       <S.TitleContainer>
         <S.Name>{user.name}</S.Name>
         <S.StarContainer>
-          {[1, 2, 3, 4, 5].map((_, index) => {
-            if (index < rate) {
-              return <S.Star src={Star} />;
-            } else {
-              return <S.Star src={DisableStar} />;
-            }
-          })}
+          <S.Star src={Star} />
           <S.ReviewStar>{rate}</S.ReviewStar>
         </S.StarContainer>
       </S.TitleContainer>

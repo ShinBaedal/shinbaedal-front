@@ -5,16 +5,16 @@ import SellMenuList from "./Body/SellMenuList/SellMenuList";
 import Header from "./Header/Header";
 import * as S from "./styles";
 import Modal from "../Modal/Modal";
-import MenuModal from "../MenuModal/MenuModal";
-import ReviewModal from "../ReviewModal/ReviewModal";
-import DetailReviewStar from "../DetailReviewStar/DetailReviewStar";
 import Store from "../../interface/Store";
+import State from "../../interface/State";
+import { useNavigate } from "react-router";
 
 interface PropsType {
   data: Store;
+  menusState: State<number[]>;
 }
 
-const CustomerShopDetail = ({ data }: PropsType) => {
+const CustomerShopDetail = ({ data, menusState }: PropsType) => {
   const navs = ["메뉴", "리뷰"];
 
   const [nav, setNav] = useState<string>(navs[0]);
@@ -25,14 +25,28 @@ const CustomerShopDetail = ({ data }: PropsType) => {
 
   const renderBody = () => {
     const bodyMap = new Map<string, JSX.Element>()
-      .set(navs[0], <SellMenuList id={id} />)
-      .set(navs[1], <CustomerDetailReview id={id} />);
+      .set(
+        navs[0],
+        <SellMenuList
+          menusState={menusState}
+          id={id}
+          isModalState={[isModal, setIsModal]}
+          modalState={[modal, setModal]}
+        />
+      )
+      .set(
+        navs[1],
+        <CustomerDetailReview
+          isModalState={[isModal, setIsModal]}
+          modalState={[modal, setModal]}
+          id={id}
+        />
+      );
 
     const render = bodyMap.get(nav)!;
 
     return render;
   };
-
   return (
     <>
       <S.Container>
@@ -46,7 +60,7 @@ const CustomerShopDetail = ({ data }: PropsType) => {
         {/* <MenuModal /> */}
         {/* <ReviewModal /> */}
         {/* <DetailReviewStar /> */}
-        {modal}
+        {/* {modal} */}
       </Modal>
     </>
   );
