@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { font } from "../../style/font";
 import ReviewContent from "./ReviewContent/ReviewContent";
 import SmBtns from "./SmBtns/SmBtns";
-import TopBtn from "./TopBtn";
 import * as S from "./styles";
 
 const CustomerDetailReview = () => {
