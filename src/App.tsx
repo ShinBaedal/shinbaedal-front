@@ -1,16 +1,13 @@
 import React from "react";
 import { Global } from "@emotion/react";
 import { reset } from "./style/globalStyle";
-// import RootRouter from "./route";
-// import CustomerOrderCheck from "./components/CustomerOrderCheck/CustomerOrderCheck";
-import DetailReviewStar from "./components/DetailReviewStar/DetailReviewStar";
+import RootRouter from "./route";
 
 function App() {
   return (
     <>
       <Global styles={reset} />
-      {/* <RootRouter /> */}
-      <DetailReviewStar />
+      <RootRouter />
     </>
   );
 }
