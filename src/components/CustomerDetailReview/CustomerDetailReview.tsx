@@ -57,7 +57,7 @@ const CustomerDetailReview = ({ id, isModalState, modalState }: PropsType) => {
     <S.Container>
       <div
         onClick={() => {
-          setModal(<DetailReviewStar isModalState={isModalState} />);
+          setModal(<DetailReviewStar id={id} isModalState={isModalState} />);
           setIsModal(true);
         }}
       >

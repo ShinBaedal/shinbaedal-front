@@ -1,6 +1,6 @@
 import * as S from "./styles";
 import React, { useLayoutEffect, useState } from "react";
-import Order from "./Order";
+import OrderContent from "./Order";
 import Header from "../Header/Header";
 import OrderType from "../../interface/Order";
 import { getMyOrderList } from "../../utils/api/Order";
@@ -21,7 +21,7 @@ export default function CustomerOrderList() {
   }, []);
 
   const renderOrderList = orderList.map((value) => {
-    return <Order data={value} />;
+    return <OrderContent data={value} />;
   });
 
   return (

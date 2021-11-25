@@ -7,10 +7,13 @@ const MainContainer = (): JSX.Element => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log("ASd");
+
     if (access_token && id) {
       setToken(access_token);
       navigate(`/customer/shop/${id}`);
     }
+    console.log("AS123");
   }, [access_token, id]);
 
   return (

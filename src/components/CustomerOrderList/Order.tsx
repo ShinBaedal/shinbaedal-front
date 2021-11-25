@@ -6,7 +6,7 @@ interface PropsType {
   data: Order;
 }
 
-export default function Order({ data }: PropsType) {
+export default function OrderContent({ data }: PropsType) {
   const { isDone, menuNames, storeName } = data;
 
   return (
