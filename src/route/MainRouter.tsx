@@ -1,11 +1,11 @@
 import React, { FC, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import CustomerOrderDetail from "../components/CustomerOrderDetail/CustomerOrderDetail";
-import CustomerOrderList from "../components/CustomerOrderList/CustomerOrderList";
 import {
   MainContainer,
   CustomerShopDetailContainer,
   CustomerOrderCheckContainer,
+  CustomerOrderDetailContainer,
+  CustomerOrderListContainer,
 } from "../container";
 
 const MainRouter: FC = (): JSX.Element => {
@@ -15,8 +15,8 @@ const MainRouter: FC = (): JSX.Element => {
         <Route path="/" element={<MainContainer />} />
         <Route path="/customer/shop/detail" element={<CustomerShopDetailContainer />} />
         <Route path="/customer/ordercheck" element={<CustomerOrderCheckContainer />} />
-        <Route path="/customer/orderlist" element={<CustomerOrderList />} />
-        <Route path="/customer/orderlist/detail" element={<CustomerOrderDetail />} />
+        <Route path="/customer/orderlist" element={<CustomerOrderListContainer />} />
+        <Route path="/customer/orderlist/detail" element={<CustomerOrderDetailContainer />} />
       </Routes>
     </Suspense>
     //https://naver.com/route
