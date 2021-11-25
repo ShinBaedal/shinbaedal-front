@@ -1,13 +1,13 @@
-import Header from "../../components/Header/Header";
-import Main from "../../components/Main/Main";
-import CustomerOrderList from "../../components/CustomerOrderList/CustomerOrderList";
+// import Header from "../../components/Header/Header";
+// import Main from "../../components/Main/Main";
+import CustomerOrderDetail from "../../components/CustomerOrderDetail/CustomerOrderDetail";
 
 const MainContainer = (): JSX.Element => {
   return (
     <>
       {/* <Header />
       <Main /> */}
-      <CustomerOrderList />
+      <CustomerOrderDetail />
     </>
   );
 };
