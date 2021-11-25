@@ -17,10 +17,10 @@ const MainRouter: FC = (): JSX.Element => {
           <Route path="shop">
             <Route path=":id" element={<CustomerShopDetailContainer />} />
           </Route>
-          <Route path="ordercheck/:menus" element={<CustomerOrderCheckContainer />} />
+          {/* <Route path="ordercheck/:menus" element={<CustomerOrderCheckContainer />} /> */}
           <Route path="orderlist">
             <Route path="" element={<CustomerOrderListContainer />} />
-            <Route path="detail/:id" element={<CustomerOrderDetailContainer />} />
+            {/* <Route path="detail/:id" element={<CustomerOrderDetailContainer />} /> */}
           </Route>
         </Route>
       </Routes>

@@ -1,19 +1,27 @@
 import React from "react";
+import Order from "../../interface/Order";
 import * as S from "./styles";
-export default function Order() {
+
+interface PropsType {
+  data: Order;
+}
+
+export default function Order({ data }: PropsType) {
+  const { isDone, menuNames, storeName } = data;
+
   return (
     <div>
       <S.MainDiv>
         <S.SContainer>
-          <S.SubTitle>대전 신성점</S.SubTitle>
-          <S.Arrows>  </S.Arrows>
+          <S.SubTitle>{storeName}</S.SubTitle>
         </S.SContainer>
         <S.SubTextContainer>
-          <S.SubTextDiv>햄버거 - 10,000원</S.SubTextDiv>
-          <S.SubTextDiv>햄버거 - 10,000원</S.SubTextDiv>
+          {menuNames.slice(0, menuNames.length - 1).map((value, index) => {
+            return <S.SubTextDiv key={index}>{value}</S.SubTextDiv>;
+          })}
           <S.SContainer>
-            <S.SubTextDiv>햄버거 - 10,000원 ...</S.SubTextDiv>
-            <S.Wait>리뷰 완료</S.Wait>
+            <S.SubTextDiv>{menuNames[menuNames.length - 1]}</S.SubTextDiv>
+            <S.Wait>{isDone ? "주문 완료" : "주문 대기"}</S.Wait>
           </S.SContainer>
         </S.SubTextContainer>
       </S.MainDiv>

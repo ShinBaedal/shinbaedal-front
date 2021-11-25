@@ -14,14 +14,16 @@ const ReviewContent = ({ data }: PropsType) => {
   return (
     <S.Review>
       <S.TitleContainer>
-        <S.Name>{user.name}</S.Name>
+        <S.Name>
+          {user.name} {type === "MALIGNITY" && "· 악성 리뷰"}
+        </S.Name>
         <S.StarContainer>
           <S.Star src={Star} />
           <S.ReviewStar>{rate}</S.ReviewStar>
         </S.StarContainer>
       </S.TitleContainer>
       <S.ReviewSubText>{content}</S.ReviewSubText>
-      <S.SellerReview>사장님의 답글: {reply.content}</S.SellerReview>
+      {reply.content && <S.SellerReview>사장님의 답글: {reply.content}</S.SellerReview>}
     </S.Review>
   );
 };
