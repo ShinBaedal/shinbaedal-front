@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReviewContent from "./ReviewContent/ReviewContent";
+import ReviewInput from "./ReviewInput/ReviewInput";
 import SmBtns from "./SmBtns/SmBtns";
 import * as S from "./styles";
 
@@ -9,6 +10,7 @@ const CustomerDetailReview = () => {
 
   return (
     <S.Container>
+      <ReviewInput />
       <S.Title>리뷰 1234</S.Title>
       <SmBtns navs={navs} navState={[nav, setNav]}></SmBtns>
       <S.ReviewContainer>
