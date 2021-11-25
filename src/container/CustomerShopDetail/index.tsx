@@ -41,6 +41,7 @@ const CustomerShopDetailContainer = () => {
       };
       try {
         await postOrder(d);
+        setMenus([]);
       } catch (error) {
         console.log(error);
       }

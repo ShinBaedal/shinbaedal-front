@@ -29,11 +29,10 @@ export const MainDiv = styled.div`
 `;
 
 export const SubTextContainer = styled.div`
-  margin-top: 2px;
+  margin-top: 10px;
 `;
 
 export const SubTextDiv = styled.p`
-  margin-top: 8px;
   font: ${font.body3};
   color: ${color.darkGrey};
 `;

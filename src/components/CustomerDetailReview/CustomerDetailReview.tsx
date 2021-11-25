@@ -46,6 +46,7 @@ const CustomerDetailReview = ({ id, isModalState, modalState }: PropsType) => {
         onClick={() => {
           setModal(<ReviewModal data={value} />);
           setIsModal(true);
+          settingReviewList();
         }}
       >
         <ReviewContent data={value} />

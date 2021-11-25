@@ -10,7 +10,9 @@ export default function CustomerOrderList() {
 
   const settingOrderList = async () => {
     try {
-      setOrderList((await getMyOrderList()).data.data);
+      const response = await getMyOrderList();
+
+      setOrderList(response.data.data);
     } catch (error) {
       console.log(error);
     }
@@ -18,6 +20,8 @@ export default function CustomerOrderList() {
 
   useLayoutEffect(() => {
     settingOrderList();
+
+    document.title = "주문 목록";
   }, []);
 
   const renderOrderList = orderList.map((value) => {
