@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { font } from "../../style/font";
 import ReviewContent from "./ReviewContent/ReviewContent";
+import ReviewInput from "./ReviewInput/ReviewInput";
 import SmBtns from "./SmBtns/SmBtns";
-import TopBtn from "./TopBtn";
 import * as S from "./styles";
 
 const CustomerDetailReview = () => {
@@ -11,6 +10,7 @@ const CustomerDetailReview = () => {
 
   return (
     <S.Container>
+      <ReviewInput />
       <S.Title>리뷰 1234</S.Title>
       <SmBtns navs={navs} navState={[nav, setNav]}></SmBtns>
       <S.ReviewContainer>

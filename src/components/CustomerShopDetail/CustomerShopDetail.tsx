@@ -4,10 +4,15 @@ import Menu from "./Body/Menu/Menu";
 import SellMenuList from "./Body/SellMenuList/SellMenuList";
 import Header from "./Header/Header";
 import * as S from "./styles";
+import Modal from "../Modal/Modal";
+import MenuModal from "../MenuModal/MenuModal";
+import ReviewModal from "../ReviewModal/ReviewModal";
+import DetailReviewStar from "../DetailReviewStar/DetailReviewStar";
 
 const CustomerShopDetail = () => {
   const navs = ["메뉴", "리뷰"];
   const [nav, setNav] = useState<string>(navs[0]);
+  const [isModal, setIsModal] = useState<boolean>(true);
 
   const renderBody = () => {
     const bodyMap = new Map<string, () => JSX.Element>()
@@ -20,13 +25,20 @@ const CustomerShopDetail = () => {
   };
 
   return (
-    <S.Container>
-      <Header />
-      <div>
-        <Menu navs={navs} navState={[nav, setNav]} />
-        {renderBody()}
-      </div>
-    </S.Container>
+    <>
+      <S.Container>
+        <Header />
+        <div>
+          <Menu navs={navs} navState={[nav, setNav]} />
+          {renderBody()}
+        </div>
+      </S.Container>
+      <Modal activeState={[isModal, setIsModal]}>
+        {/* <MenuModal /> */}
+        {/* <ReviewModal /> */}
+        <DetailReviewStar />
+      </Modal>
+    </>
   );
 };
 
