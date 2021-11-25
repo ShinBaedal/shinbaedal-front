@@ -1,5 +1,4 @@
 import React, { useLayoutEffect, useState } from "react";
-import "./temp.css";
 import Star from "../../assets/icons/star.svg";
 import DisableStar from "../../assets/icons/disable_star.svg";
 import * as S from "./styles";
