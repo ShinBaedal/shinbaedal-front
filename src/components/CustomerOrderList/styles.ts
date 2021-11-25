@@ -44,8 +44,8 @@ export const SContainer = styled.div`
 `;
 export const Menus = styled.span`
   margin-bottom: 10px;
-  font: ${font.body3}
-  color: ${color.grey}
+  font: ${font.body3};
+  color: ${color.grey};
 `;
 
 export const Arrows = styled.span`

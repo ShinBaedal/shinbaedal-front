@@ -3,22 +3,31 @@ import styled from "@emotion/styled";
 import { font } from "../../style/font";
 import { color } from "../../style/color";
 
+export const Container = styled.div`
+  width: 100%;
+  background-color: ${color.white};
+  padding: 36px 0px;
+`;
+
+export const TitleContainer = styled.div`
+  width: 100%;
+  padding: 0px 24px;
+`;
+
 export const MainTitle = styled.div`
   font: ${font.headline4};
-  padding-top: 36px;
-  padding-left: 24px;
-  padding-bottom: 16px;
+`;
+export const SContainer = styled.div`
+  display: flex;
+  margin: 16px 0px;
+  justify-content: space-between;
 `;
 export const SubTitle = styled.span`
   font: ${font.body1};
-  padding-left: 24px;
-  margin-bottom: 16px;
 `;
 export const Completed = styled.div`
   font: ${font.body3};
   color: ${color.grey};
-  float: right;
-  padding-right: 24px;
 `;
 export const FoodContainer = styled.div`
   margin-bottom: 8px;
@@ -34,7 +43,7 @@ export const FoodPrice = styled.div`
   font: ${font.body2};
   color: ${color.green};
   padding-left: 12px;
-  padding-top: 8px;ß
+  padding-top: 8px;
 `;
 
 export const Selected = styled.div`
@@ -81,16 +90,19 @@ export const OrderForm = styled.div`
   bottom: 0;
   height: 6rem;
 `;
+
+export const WonContainer = styled.div`
+  font: ${font.headline4};
+  padding: 0px 24px;
+  display: flex;
+  justify-content: right;
+`;
+
 export const OrderPrice = styled.span`
   color: ${color.green};
-  font: ${font.headline4};
-  float: right;
-  padding-right: 30px;
 `;
 export const OrderText = styled.span`
   color: ${color.black};
-  font: ${font.headline4};
-  float: right;
 `;
 export const Order = styled.button`
   background-color: ${color.green};
