@@ -7,46 +7,53 @@ export const MainDiv = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 360px;
-  border-radius: 20px;
-  background-color: ${color.grey};
+  border-radius: 20px 20px 0px 0px;
+  background-color: ${color.white};
+  padding: 24px;
 `;
 
 export const ReviewGo = styled.p`
-  padding-top: 20px;
-  padding-left: 20px;
-  font: ${font.headline2};
+  font: ${font.subtitle2};
 `;
 
-export const ReviewInput = styled.input`
-  width: 90%;
-  padding-bottom: 120px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 20px;
-  border: 0;
-  padding-top: 10px;
-  padding-left: 10px;
-  font: ${font.description1};
-  background-color: ${color.lightGrey};
+export const StarContainer = styled.div`
+  display: flex;
+  column-gap: 12px;
+  margin-top: 12px;
+  margin-bottom: 16px;
 `;
 
-export const Fill = styled.div`
-  position: fixed;
-  bottom: 0;
+export const Star = styled.img`
+  width: 24px;
+`;
+
+export const ReviewInput = styled.textarea`
   width: 100%;
-  height: 30px;
-  background-color: ${color.grey};
+  display: block;
+  border-radius: 20px;
+  box-sizing: border-box;
+  border: 0;
+  font: ${font.body3};
+  background-color: ${color.lightGrey};
+  outline: none;
+  padding: 12px;
+  height: 100px;
+  resize: none;
+  &::placeholder {
+    color: ${color.grey};
+  }
 `;
 
 export const WriteBtn = styled.button`
-  width: 80%;
+  width: 100%;
   height: 35px;
-  margin-top: 30px;
-  margin-left: 37.5px;
-  display: block;
+  padding: 8px 0px;
+  display: flex;
+  justify-content: center;
   background-color: ${color.green};
-  border-radius: 20px;
+  border-radius: 5px;
+  margin-top: 36px;
+  outline: none;
   border: 0;
   font: ${font.body1};
   color: white;
