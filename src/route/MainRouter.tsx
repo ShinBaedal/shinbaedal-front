@@ -12,11 +12,17 @@ const MainRouter: FC = (): JSX.Element => {
   return (
     <Suspense fallback={<div>로딩중...</div>}>
       <Routes>
-        <Route path="/:access_token" element={<MainContainer />} />
-        <Route path="/customer/shop/detail" element={<CustomerShopDetailContainer />} />
-        <Route path="/customer/ordercheck" element={<CustomerOrderCheckContainer />} />
-        <Route path="/customer/orderlist" element={<CustomerOrderListContainer />} />
-        <Route path="/customer/orderlist/detail" element={<CustomerOrderDetailContainer />} />
+        <Route path=":access_token" element={<MainContainer />} />
+        <Route path="customer">
+          <Route path="shop">
+            <Route path=":id" element={<CustomerShopDetailContainer />} />
+          </Route>
+          <Route path="ordercheck" element={<CustomerOrderCheckContainer />} />
+          <Route path="orderlist">
+            <Route path="" element={<CustomerOrderListContainer />} />
+            <Route path="detail/:id" element={<CustomerOrderDetailContainer />} />
+          </Route>
+        </Route>
       </Routes>
     </Suspense>
     //https://naver.com/route
