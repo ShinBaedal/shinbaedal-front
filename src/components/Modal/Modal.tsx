@@ -21,6 +21,7 @@ const Modal = ({ children, activeState }: PropsType) => {
     window.scrollTo(0, 0);
     setisTouch(false);
     isFullRef.current = false;
+    isCloseRef.current = false;
     if (containerRef.current) containerRef.current.style.height = `unset`;
 
     return () => {
