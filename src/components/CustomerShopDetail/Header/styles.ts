@@ -24,6 +24,7 @@ export const TitleContainer = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   margin-top: 16px;
+  margin-bottom: 24px;
 `;
 
 export const Title = styled.div`
@@ -42,38 +43,5 @@ export const StarContainer = styled.div`
 `;
 
 export const Star = styled.img`
-  width: 16px;
-`;
-
-export const InfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
-  margin-top: 8px;
-  margin-bottom: 24px;
-`;
-
-export const DarkGrey = styled.div`
-  color: ${color.darkGrey};
-  font: ${font.description3};
-`;
-
-export const GreenDescription = styled.div`
-  color: ${color.green};
-  font: ${font.description3};
-`;
-
-export const LikeOuter = styled.div`
-  display: flex;
-  column-gap: 8px;
-`;
-
-export const LikeContainer = styled.div`
-  display: flex;
-  column-gap: 4px;
-  align-items: center;
-`;
-
-export const Like = styled.img`
   width: 16px;
 `;
