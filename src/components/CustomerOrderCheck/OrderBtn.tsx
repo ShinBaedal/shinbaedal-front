@@ -8,7 +8,6 @@ export default function OrderBtn() {
     <>
       <S.OrderForm>
         <S.OrderPrice style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-          {" "}
           &nbsp; 30,000원
         </S.OrderPrice>
         <span
