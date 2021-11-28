@@ -1,15 +1,10 @@
 export default interface Review {
-  id: number;
-  user: {
-    id: number;
-    name: string;
-  };
-  menuNames: string[];
-  type: string;
-  createAt: string;
   content: string;
+  createdAt: string;
+  id: number;
+  menuNames: string[];
   rate: number;
-  reply: {
-    content: string;
-  };
+  reply: { content: undefined | string };
+  type: string;
+  user: { id: number; name: string };
 }

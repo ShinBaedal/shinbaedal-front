@@ -27,7 +27,7 @@ export default function DetailReviewStar({ isModalState, id }: PropsType) {
         <S.ReviewGo>리뷰 달기</S.ReviewGo>
         <S.StarContainer>
           {[1, 2, 3, 4, 5].map((value, index) => {
-            if (index < count) {
+            if (index <= count) {
               return (
                 <S.Star
                   onClick={() => {

@@ -2,9 +2,10 @@ import Review from "../../../interface/Review";
 import defaultResponse from "./defaultResponse";
 
 interface Response {
+  reviewCount: number;
+  reviews: Review[];
   storeId: number;
   storeName: string;
-  reviews: Review[];
 }
 
 type ReviewListResponse = defaultResponse<Response>;

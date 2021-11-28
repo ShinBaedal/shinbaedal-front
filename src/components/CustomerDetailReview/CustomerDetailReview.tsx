@@ -30,7 +30,9 @@ const CustomerDetailReview = ({ id, isModalState, modalState }: PropsType) => {
         .set(navs[2], "NEGATIVE");
 
       const type = map.get(nav)!;
-      setReviewList((await getReviewList(id, type)).data.data.reviews);
+      const response = await getReviewList(id, type);
+
+      setReviewList([...(response.data.data ? response.data.data.reviews : [])]);
     } catch (error) {
       console.log(error);
     }

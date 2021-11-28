@@ -7,6 +7,25 @@ import Store from "../../interface/Store";
 import OrderRequest from "../../models/dto/request/orderRequest";
 import { postOrder } from "../../utils/api/Order";
 import { getShop } from "../../utils/api/Shop";
+import styled from "@emotion/styled";
+import { color } from "../../style/color";
+import { font } from "../../style/font";
+
+export const C = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 50vh;
+  border-radius: 20px;
+  background-color: ${color.white};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: ${font.headline4};
+  z-index: 100;
+`;
 
 const CustomerShopDetailContainer = () => {
   const { id } = useParams();
@@ -29,9 +48,11 @@ const CustomerShopDetailContainer = () => {
     settingData();
   }, [id]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (data) document.title = data.name;
   }, [data]);
+
+  const [is, setIs] = useState(false);
 
   const onBuy = async () => {
     if (menus.length > 0) {
@@ -42,6 +63,7 @@ const CustomerShopDetailContainer = () => {
       try {
         await postOrder(d);
         setMenus([]);
+        setIs(true);
       } catch (error) {
         console.log(error);
       }
@@ -50,6 +72,7 @@ const CustomerShopDetailContainer = () => {
 
   return (
     <>
+      {is && <C>주문 완료</C>}
       <Header />
       {data && <CustomerShopDetail data={data} menusState={[menus, setMenus]} id={Number(id)} />}
       <Footer onBuy={onBuy} size={menus.length} />

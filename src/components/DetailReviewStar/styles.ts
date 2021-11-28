@@ -58,3 +58,13 @@ export const WriteBtn = styled.button`
 export const Black = styled.div`
   background-color: ${color.black};
 `;
+
+export const C = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: ${color.white};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: ${font.headline4};
+`;

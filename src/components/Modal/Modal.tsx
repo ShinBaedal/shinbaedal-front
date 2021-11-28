@@ -61,7 +61,7 @@ const Modal = ({ children, activeState }: PropsType) => {
           onTouchMove={(e) => {
             if (e.touches.length > 0) {
               const touch = e.touches[0];
-              const screenY = touch.screenY + 100;
+              const screenY = touch.pageY;
 
               const y = window.screen.height - screenY;
 
